@@ -514,7 +514,15 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function (handle
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
-console.log($('button').fadeIn(1800));
+$('#first').on('click', () => {
+  $('div').eq(1).fadeOut(800);
+});
+$('[data-count="second"]').on('click', () => {
+  $('div').eq(2).fadeOut(800);
+});
+$('button').eq(2).on('click', () => {
+  $('.w-500').fadeOut(800);
+});
 
 /***/ })
 
