@@ -222,6 +222,59 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.find = function (selecto
   return this;
 };
 
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.closest = function (selector) {
+  let counter = 0;
+
+  for (let i = 0; i < this.length; i++) {
+    if (!this[i].closest(selector)) {
+      throw 'Error: Метод closest не может найти подходящего родителя.';
+    } else {
+      this[i] = this[i].closest(selector);
+      counter++;
+    }
+  }
+
+  if (counter) {
+    const objLength = Object.keys(this).length;
+
+    for (; counter < objLength; counter++) {
+      delete this[counter];
+    }
+  }
+
+  return this;
+};
+
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.siblings = function () {
+  let numberOfItems = 0,
+      counter = 0;
+  const copyObj = Object.assign({}, this);
+
+  for (let i = 0; i < copyObj.length; i++) {
+    const arr = copyObj[i].parentNode.children;
+
+    for (let j = 0; j < arr.length; j++) {
+      if (copyObj[i] === arr[j]) {
+        continue;
+      }
+
+      this[counter] = arr[j];
+      counter++;
+    }
+
+    numberOfItems += arr.length - 1;
+  }
+
+  this.length = numberOfItems;
+  const objLength = Object.keys(this).length;
+
+  for (; numberOfItems < objLength; numberOfItems++) {
+    delete this[numberOfItems];
+  }
+
+  return this;
+};
+
 /***/ }),
 
 /***/ "./src/js/lib/modules/classes.js":
@@ -236,25 +289,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
 
 
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.addClass = function (...classNames) {
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.addClass = function () {
   for (let i = 0; i < this.length; i++) {
     if (!this[i].classList) {
       continue;
     }
 
-    this[i].classList.add(...classNames);
+    this[i].classList.add(...arguments);
   }
 
   return this;
 };
 
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.removeClass = function (...classNames) {
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.removeClass = function () {
   for (let i = 0; i < this.length; i++) {
     if (!this[i].classList) {
       continue;
     }
 
-    this[i].classList.remove(...classNames);
+    this[i].classList.remove(...arguments);
   }
 
   return this;
@@ -389,10 +442,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function (handle
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
-$('button').on('click', function () {
-  $('div').eq(2).toggleClass('active');
-});
-console.log($('div').eq(3).find('.some'));
+console.log();
 
 /***/ })
 
