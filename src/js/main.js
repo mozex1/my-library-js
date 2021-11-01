@@ -1,6 +1,6 @@
 import './lib/lib';
 
-console.log();
+console.log($('button').fadeIn(1800));
 
 
 
