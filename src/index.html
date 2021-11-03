@@ -11,22 +11,69 @@
 
  <div class="container">
 
-    <button class="btn btn-primary m20 " id="first">FadeOut first text</button>
-    <button class="btn btn-dark m20 " data-count="second">FadeOut second text</button>
-    <button class="btn btn-warning m20 " >fadeout all text</button>
-
     <!-- Dropdown menu  -->
     <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton" >Dropdown button</button>
-        <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
-            <a href="#" class="dropdown-item">Action 1</a>
-            <a href="#" class="dropdown-item">Action 2</a>
-            <a href="#" class="dropdown-item">Action 3</a>
-        </div>
+      <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton" >Dropdown button</button>
+      <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
+         <a href="#" class="dropdown-item">Action 1</a>
+         <a href="#" class="dropdown-item">Action 2</a>
+         <a href="#" class="dropdown-item">Action 3</a>
+      </div>
+    </div>
+    
+    <!-- Btns -->
+    <div class="btns d-flex f-space-around">
+        <button class="btn btn-primary m20 " id="first">FadeOut first text</button>
+        <button class="btn btn-dark m20 " data-count="second">FadeOut second text</button>
+        <button class="btn btn-warning m20 " >fadeout all text</button>
     </div>
 
 
-  
+   
+
+    <!-- Card -->
+    <div class="goods d-flex f-space-between">
+        <div class="card">
+            <img class="card-img" src="https://i.kym-cdn.com/photos/images/facebook/000/620/839/28a.png" alt="photo">
+            <div class="card-body">
+                <div class="card-title">card title 1</div>
+                <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati illum dolores non eligendi, ea veritatis. Atque nostrum natus unde at id, earum voluptatibus ea enim, officia esse, distinctio sunt nulla.</p>
+                <a href="" class="btn btn-primary" data-toogle='modal' data-target="#exampleModal">link to</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img" src="https://i.kym-cdn.com/photos/images/facebook/000/620/839/28a.png" alt="photo">
+            <div class="card-body">
+                <div class="card-title">card title 2</div>
+                <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati illum dolores non eligendi, ea veritatis. Atque nostrum natus unde at id, earum voluptatibus ea enim, officia esse, distinctio sunt nulla.</p>
+                <a href="" class="btn btn-primary" data-toogle='modal' data-target="#exampleModal2">Link to</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="exampleModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button class="close" data-close>
+                    <span>&times;</span>
+                </button>
+                <div class="modal-header">
+                    <div class="modal-title">
+                        Modal title
+                    </div>
+                </div>
+                <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem aperiam accusantium dignissimos rem vero sapiente repellendus labore enim dolor quaerat culpa reiciendis quis quos, nulla magni iusto veniam fugiat est!
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-close>Close</button>
+                    <button class="btn btn-success">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
  
  </div>
     
